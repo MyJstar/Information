@@ -40,9 +40,9 @@ public class InformationActivity extends AppCompatActivity {
                 it.putExtra("name", editTextName.getText().toString());
                 it.putExtra("age", editTextAge.getText().toString());
                 if( radioMale.isChecked()==true){
-                    it.putExtra("sex", "여자");
-                }else
                     it.putExtra("sex", "남자");
+                }else
+                    it.putExtra("sex", "여자");
 
                 String strLicense = "";
                 if (cBInfo.isChecked())

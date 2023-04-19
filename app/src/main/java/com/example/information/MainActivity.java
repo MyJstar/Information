@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 str = editTextID.getText().toString(); // 문자열로 형변환 해주는 메소드이다.
                 Intent it = new Intent(getApplicationContext(),InformationActivity.class);
                 it.putExtra("id", str);
-                startActivityForResult(it, 1);
+                startActivityForResult(it, 1); // 시작.
             }
         });
 
@@ -56,6 +56,19 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        if((requestCode==1 && resultCode == RESULT_OK)){
+            tVResultLabel.setText("전송\n 정보\n출력\n");
+            str="아이디"+ str;
+            str = str + "\n이름: " + data.getStringExtra("name");
+            str = str + "\n나이: " + data.getStringExtra("age");
+            str = str + "\n성별: " + data.getStringExtra("sex");
+            str = str + "\n자격증: " + data.getStringExtra("license");
+
+            tVResult.setText(str);
+
+        }
+
+
 
 
     }
